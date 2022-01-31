@@ -6,6 +6,10 @@ A simple react native chat app design built using expo react native. This exampl
 ![Demo](./demoscreen/2.jpeg)
 ![Demo](./demoscreen/3.jpeg)
 
+### Try this on your device
+Scan with expo go app
+![Demo](./demoscreen/expo-go.svg)    
+
 ### Installation
 
 - `git clone https://github.com/shujakhalid19/Chatapp`
