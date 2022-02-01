@@ -28,7 +28,7 @@ export default function App() {
           {(props)=><ChatScreen {...props} />}
           </Stack.Screen>
           <Stack.Screen name="Profile"options={{headerShown:false}}>
-          {(props)=><Profile {...props} />}
+            {(props)=><Profile {...props} />}
           </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
@@ -37,4 +37,3 @@ export default function App() {
     
   );
 }
-

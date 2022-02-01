@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet,Dimensions,FlatList,View,Image,Text,TouchableOpacity,TextInput } from "react-native";
+import { StyleSheet,Dimensions,FlatList,View,Image,Text,TouchableOpacity,TextInput, KeyboardAvoidingView } from "react-native";
 import styles from './styles/main';
 
 
@@ -17,12 +17,11 @@ const DATA_MESSAGES=[
     var state=item.sender==="Me"
       return(
       <View style={[styles.pdlt10,styles.mdtp10,styles.mdbt10,styles.pdtp10,item.sender==="Me"? styles.frowrev : styles.frow,styles.jStart]}>
-        <View style={state ? styles.pdlt10 : styles.pdrt10}>
-          <Image style={{width:40,height:40,borderRadius:50}}
-          source={{uri:item.img}} />
-        </View>
-        <View>
-          
+          <View style={state ? styles.pdlt10 : styles.pdrt10}>
+            <Image style={{width:40,height:40,borderRadius:50}}
+            source={{uri:item.img}} />
+          </View>
+          <View>
           <View style={[messages.Chat,state ? messages.myChat : messages.frnChat]}>
             <Text style={{lineHeight:25}}>{item.text}</Text>
           </View>
@@ -61,6 +60,10 @@ const DATA_MESSAGES=[
   )
   
     return(
+      <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboarVerticalOffset ={100}
+      style={{flex: 1}}>
       <>
       <FlatList 
         data={DATA_MESSAGES[0].chats}
@@ -73,7 +76,7 @@ const DATA_MESSAGES=[
         contentContainerStyle = {{flexGrow:1,backgroundColor:'#D3D3D388'}}
         
       />
-      <View style={{width:width,height:height/12,backgroundColor:'#FFF',borderTopColor:'#d4d4d4',borderTopWidth:1,paddingTop:5}}>
+      <View style={{width:width,backgroundColor:'#FFF',borderTopColor:'#d4d4d4',borderTopWidth:1,paddingTop:15,paddingBottom:5}}>
             <View style={[styles.frow,styles.jspaceBw,styles.pdrt10,styles.pdlt10]}>
               <TextInput multiline={true} placeholder='type your message'
                 style={{
@@ -81,12 +84,13 @@ const DATA_MESSAGES=[
                   width:width/1.3
                 }}
               />
-              <TouchableOpacity style={[{justifyContent:'center'}]}>
+              <TouchableOpacity>
                 <Text style={[styles.fb,styles.clBl]}>Send</Text>
               </TouchableOpacity>
             </View>
           </View>
           </>
+      </KeyboardAvoidingView>
     )
   }
 

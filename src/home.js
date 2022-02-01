@@ -77,18 +77,17 @@ const handleItemPress = (item, index) =>{
           </View>
           </>
         }
-        
       />
-        <View style={[{position:'absolute',width:width,height:height}]}>
-          <FloatingMenu
+        <View style={[{display:isMenuOpen ? 'flex' : 'none',position:'absolute',width:width,height:height}]}></View>
+        <FloatingMenu
             items={items}
             isOpen={isMenuOpen}
             onMenuToggle={handleMenuToggle}
             onItemPress={handleItemPress}
             bottom={50}
             right={25}
+            innerWidth={41}
           />
-        </View>      
       </>
   )
 }
