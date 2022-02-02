@@ -1,6 +1,6 @@
 ## Simple React Native Chat App 
 
-:warning: **This project needs collaborators**:
+:warning: **This project need collaborators**:
 
 Join our [discord server](https://discord.gg/PFqtwbVXMK)
 
