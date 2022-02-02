@@ -14,6 +14,7 @@ module.exports  = StyleSheet.create({
       height:30,
       backgroundColor:'#d2d2d2'
     },
+    flhalf:{flex:0.5},
     fl1:{flex:1},frow:{flexDirection:'row'},frowrev:{flexDirection:'row-reverse'},jStart:{justifyContent:'flex-start'},jspaceBw:{justifyContent:'space-between'},jevenSpace:{justifyContent:'space-evenly'},
     username22:{
       fontSize:20
