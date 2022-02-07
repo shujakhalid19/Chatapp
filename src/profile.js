@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { Animated, Dimensions, ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
+import React, { useRef } from "react";
+import { Animated, Dimensions, View, Text, Image, TouchableOpacity } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Icon from "@expo/vector-icons/Feather";
 import styles from "./styles/main";
@@ -9,6 +9,9 @@ const HEADER_HEIGHT_EXPANDED = height / 2;
 const Profile = props => {
   const insets = useSafeAreaInsets();
   const scrollY = useRef(new Animated.Value(0)).current;
+
+  const smallImgScale = (50 / width);
+
   return (
     <View style={styles.container}>
       <Animated.View
@@ -88,28 +91,25 @@ const Profile = props => {
               transform: [
                 {
                   scale: scrollY.interpolate({
-                    inputRange: [0, 50, 100],
-                    outputRange: [1, 0.5, 0.2],
-                    extrapolateLeft: "extend",
-                    extrapolateRight: "clamp",
+                    inputRange: [0, 40],
+                    outputRange: [1, smallImgScale],
+                    extrapolate: "clamp"
                   }),
                 },
                 {
                   translateX: scrollY.interpolate({
-                    inputRange: [0, 50, 100],
-                    outputRange: [0, -50, -600],
-                    extrapolateLeft: "extend",
-                    extrapolate: "clamp",
-                  }),
+                    inputRange: [0, 110],
+                    outputRange: [0, (-width * (smallImgScale * 25))],
+                    extrapolate: "clamp"
+                  })
                 },
                 {
                   translateY: scrollY.interpolate({
-                    inputRange: [0, 50, 100],
-                    outputRange: [0, -50, -200],
-                    extrapolateLeft: "extend",
-                    extrapolate: "clamp",
-                  }),
-                },
+                    inputRange: [0, 110],
+                    outputRange: [0, -400],
+                    extrapolate: "clamp"
+                  })
+                }
               ],
             }}
             source={{ uri: props.route.params.img }}
