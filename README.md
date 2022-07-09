@@ -4,7 +4,7 @@
 
 Join our [discord server](https://discord.gg/PFqtwbVXMK)
 
-A simple react native chat app design built using expo react native. This example was put together by me with intend to educate beginners about industry standard design rules.
+A simple react native chat app design built using expo react native. This example was put together by me with intend to educate beginners and enthusiasts.
 
 
 
